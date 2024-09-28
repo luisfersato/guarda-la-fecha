@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date - Cristina & Luis</title>
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            overflow: hidden;
+        }
+
+        /* Estilo del contenedor principal */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            animation: fadeIn 2s;
+        }
+
+        /* Estilo de la cabecera */
+        .header {
+            font-size: 1.5em;
+            color: #34495e;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Estilo del título con los nombres */
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        /* Estilo del subtítulo */
+        h2 {
+            font-size: 1.8em;
+            font-weight: normal;
+            margin: 10px 0 30px;
+            color: #7f8c8d;
+        }
+
+        /* Estilo de la cuenta regresiva */
+        #countdown {
+            font-size: 2em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* Estilo de la barra de progreso */
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .progress-bar {
+            height: 25px;
+            width: 0%;
+            background-color: #3498db;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.4s ease;
+        }
+
+        /* Animación de suavizado */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Guarda la fecha...</div>
+        <h1>Cristina & Luis</h1>
+        <h2>2 de marzo de 2025</h2>
+        <div id="countdown">Cargando...</div>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar">0%</div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración de la fecha del evento
+        const targetDate = new Date("Mar 2, 2025 00:00:00").getTime();
+
+        // Fecha de inicio (puedes cambiarla si quieres que la barra comience desde una fecha específica)
+        const startDate = new Date().getTime();
+
+        // Calcular el total de tiempo en milisegundos entre la fecha de inicio y la fecha objetivo
+        const totalTime = targetDate - startDate;
+
+        // Actualiza la cuenta regresiva y la barra de progreso cada segundo
+        const countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Cálculo del tiempo restante para la cuenta regresiva
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Muestra la cuenta regresiva en el elemento con id="countdown"
+            document.getElementById("countdown").innerHTML =
+                days + " días " + hours + " horas " + minutes + " minutos " + seconds + " segundos ";
+
+            // Calcular el porcentaje de la barra de progreso basado en el tiempo transcurrido
+            const timePassed = now - startDate;
+            const progress = Math.min((timePassed / totalTime) * 100, 100); // Calcula el progreso en porcentaje
+            document.getElementById("progress-bar").style.width = progress + "%";
+            document.getElementById("progress-bar").innerHTML = Math.floor(progress) + "%";
+
+            // Si la cuenta regresiva ha terminado, muestra un mensaje y detén el intervalo
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "¡Es el gran día!";
+                document.getElementById("progress-bar").style.width = "100%";
+                document.getElementById("progress-bar").innerHTML = "100%";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
