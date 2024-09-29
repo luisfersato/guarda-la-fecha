@@ -4,113 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date - Cristina & Luis</title>
+    <!-- Incluir las fuentes desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&display=swap" rel="stylesheet">
     <style>
-        /* Estilo general del cuerpo */
-        body {
-            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+        /* Estilo general */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Tangerine', cursive; /* Aplicar la fuente principal */
+            background-image: url('img/plantas_fondo.jpg'); /* Fondo con plantas */
             background-size: cover;
             background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Georgia', serif;
-            color: #2c3e50;
-            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow-x: hidden;
         }
 
-        /* Estilo del contenedor principal */
+        /* Contenedor principal */
         .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            margin: 50px auto;
+            padding: 20px;
             max-width: 800px;
-            animation: fadeIn 2s;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        /* Estilo de la cabecera */
-        .header {
-            font-size: 1.5em;
-            color: #34495e;
-            margin-bottom: 30px;
-            font-style: italic;
+        /* Foto de cabecera */
+        .header-image {
+            width: 100%;
+            height: 400px;
+            background-image: url('img/img3.jpg'); /* Imagen de cabecera */
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px 15px 0 0;
         }
 
-        /* Estilo del título con los nombres */
-        h1 {
-            font-size: 4em;
-            font-weight: bold;
-            margin: 0;
+        /* Estilo del encabezado */
+        .header-text {
+            font-size: 2.5em;
+            margin: 20px 0;
             color: #2c3e50;
         }
 
-        /* Estilo del subtítulo */
-        h2 {
-            font-size: 1.8em;
-            font-weight: normal;
-            margin: 10px 0 30px;
-            color: #7f8c8d;
+        /* Nombres en el encabezado */
+        .names {
+            font-size: 4em;
+            margin: 20px 0;
+            color: #34495e;
+            font-weight: bold;
+        }
+
+        /* Mensaje principal con la fuente Lexend Giga */
+        .main-text {
+            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
+            font-size: 0.9em; /* Reducir el tamaño de la fuente */
+            margin: 20px;
+            line-height: 1.5;
+            color: #2c3e50;
         }
 
         /* Estilo de la cuenta regresiva */
         #countdown {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #e74c3c;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
-        /* Estilo de la barra de progreso */
-        .progress-container {
-            width: 100%;
-            background-color: #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 30px;
-        }
-        .progress-bar {
-            height: 25px;
-            width: 0%;
+        /* Botón de acción */
+        .save-date {
             background-color: #3498db;
-            text-align: center;
-            line-height: 25px;
             color: white;
-            font-weight: bold;
-            transition: width 0.4s ease;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: background-color 0.3s;
         }
 
-        /* Animación de suavizado */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .save-date:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">Guarda la fecha...</div>
-        <h1>Cristina & Luis</h1>
-        <h2>2 de marzo de 2025</h2>
+        <!-- Foto de cabecera -->
+        <div class="header-image"></div>
+
+        <!-- Encabezado de la página -->
+        <div class="header-text">Guarda la fecha...</div>
+
+        <!-- Nombres y mensaje principal -->
+        <h1 class="names">Cristina & Luis</h1>
+        <p class="main-text">
+            Movidos por el amor que nos une, llenos de felicidad, con la bendición de Dios y de nuestras familias,
+            tenemos el gusto de invitarte a celebrar nuestro matrimonio.
+        </p>
+
+        <!-- Cuenta regresiva -->
         <div id="countdown">Cargando...</div>
-        <div class="progress-container">
-            <div id="progress-bar" class="progress-bar">0%</div>
-        </div>
+
+        
     </div>
 
     <script>
-        // Configuración de la fecha del evento
-        const targetDate = new Date("Mar 2, 2025 00:00:00").getTime();
+        // Configuración de la fecha del evento (2 de marzo de 2025 a las 14:00)
+        const targetDate = new Date("Mar 2, 2025 14:00:00").getTime();
 
-        // Fecha de inicio (puedes cambiarla si quieres que la barra comience desde una fecha específica)
-        const startDate = new Date().getTime();
-
-        // Calcular el total de tiempo en milisegundos entre la fecha de inicio y la fecha objetivo
-        const totalTime = targetDate - startDate;
-
-        // Actualiza la cuenta regresiva y la barra de progreso cada segundo
+        // Actualiza la cuenta regresiva cada segundo
         const countdownInterval = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
@@ -125,18 +133,10 @@
             document.getElementById("countdown").innerHTML =
                 days + " días " + hours + " horas " + minutes + " minutos " + seconds + " segundos ";
 
-            // Calcular el porcentaje de la barra de progreso basado en el tiempo transcurrido
-            const timePassed = now - startDate;
-            const progress = Math.min((timePassed / totalTime) * 100, 100); // Calcula el progreso en porcentaje
-            document.getElementById("progress-bar").style.width = progress + "%";
-            document.getElementById("progress-bar").innerHTML = Math.floor(progress) + "%";
-
             // Si la cuenta regresiva ha terminado, muestra un mensaje y detén el intervalo
             if (distance < 0) {
                 clearInterval(countdownInterval);
                 document.getElementById("countdown").innerHTML = "¡Es el gran día!";
-                document.getElementById("progress-bar").style.width = "100%";
-                document.getElementById("progress-bar").innerHTML = "100%";
             }
         }, 1000);
     </script>
