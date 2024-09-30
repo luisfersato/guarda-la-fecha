@@ -50,10 +50,10 @@
             color: #2c3e50;
         }
 
-        /* Nombres */
+        /* Nombres (más grandes) */
         .names {
-            font-size: 4em;
-            margin: 20px 0;
+            font-size: 5em; /* Aumentar el tamaño de la fuente */
+            margin: 30px 0;
             color: #34495e;
             font-weight: bold;
         }
@@ -61,8 +61,8 @@
         /* Mensaje principal */
         .main-text {
             font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1.2em; /* Tamaño de la fuente */
-            margin: 20px;
+            font-size: 1em; /* Reducir el tamaño de la fuente */
+            margin: 20px 0;
             line-height: 1.5;
             color: #2c3e50;
             white-space: pre-wrap; /* Mantener saltos de línea */
@@ -71,7 +71,7 @@
         /* Estilo de la fecha */
         .date-text {
             font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 2em; /* Resaltar la fecha */
+            font-size: 2.5em; /* Aumentar el tamaño de la fuente de la fecha */
             color: #000; /* Color negro */
             margin: 30px 0;
             font-weight: bold;
@@ -80,7 +80,7 @@
         /* Estilo de la cuenta regresiva */
         #countdown {
             font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 1.2em; /* Tamaño igual al de .main-text */
+            font-size: 1em; /* Tamaño igual al de .main-text */
             color: #000; /* Color negro */
             font-weight: bold;
             margin: 60px 0; /* Aumentar espacio superior e inferior */
@@ -89,9 +89,17 @@
         /* Mensaje de "Cargando..." */
         .loading-text {
             font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1.2em; /* Tamaño igual al de .main-text */
+            font-size: 1em; /* Tamaño igual al de .main-text */
             color: #2c3e50;
             margin-top: 20px;
+        }
+
+        /* Estilo de la firma */
+        .signature {
+            font-family: 'Mate SC', serif;
+            font-size: 1.5em;
+            color: #000;
+            margin-top: 30px;
         }
 
         /* Botón de acción */
@@ -130,22 +138,22 @@
         <!-- Mensaje personalizado -->
         <p class="main-text">
             Nuestro amor es una celebración, y queremos compartir ese día contigo 🥂
-
             Estamos emocionados de unir nuestras vidas y queremos que estés allí para compartir nuestra alegría.
         </p>
         <p class="date-text">DOMINGO 2 DE MARZO DEL 2025</p>
         <p class="main-text">
             Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
-
-            Con todo nuestro amor y gratitud, CyL
         </p>
+
+        <!-- Firma con "CyL" -->
+        <p class="signature">Con todo nuestro amor y gratitud,</p>
+        <p class="signature">CyL</p>
 
         <!-- Cuenta regresiva, con más espacio antes y después -->
         <div id="countdown">Cargando...</div>
 
         <!-- Mensaje de "Cargando..." debajo del contador -->
         <div class="loading-text">Cargando...</div>
-
     </div>
 
     <!-- Sección adicional de fondo parallax -->
