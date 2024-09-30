@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date - Cristina & Luis</title>
     <!-- Incluir las fuentes desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&family=Mate+SC&display=swap" rel="stylesheet">
     <style>
         /* Estilo general */
         body, html {
@@ -13,18 +13,18 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            overflow-x: hidden;
             font-family: 'Tangerine', cursive; /* Aplicar la fuente principal */
             background-image: url('img/plantas_fondo.jpg'); /* Fondo con plantas */
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position: center;
-            overflow-x: hidden;
         }
 
         /* Contenedor principal */
         .container {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             margin: 50px auto;
             padding: 20px;
             max-width: 800px;
@@ -43,14 +43,14 @@
             border-radius: 15px 15px 0 0;
         }
 
-        /* Estilo del encabezado */
+        /* Encabezado */
         .header-text {
             font-size: 2.5em;
             margin: 20px 0;
             color: #2c3e50;
         }
 
-        /* Nombres en el encabezado */
+        /* Nombres */
         .names {
             font-size: 4em;
             margin: 20px 0;
@@ -58,21 +58,40 @@
             font-weight: bold;
         }
 
-        /* Mensaje principal con la fuente Lexend Giga */
+        /* Mensaje principal */
         .main-text {
             font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 0.9em; /* Reducir el tamaño de la fuente */
+            font-size: 1.2em; /* Tamaño de la fuente */
             margin: 20px;
             line-height: 1.5;
             color: #2c3e50;
+            white-space: pre-wrap; /* Mantener saltos de línea */
+        }
+
+        /* Estilo de la fecha */
+        .date-text {
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 2em; /* Resaltar la fecha */
+            color: #000; /* Color negro */
+            margin: 30px 0;
+            font-weight: bold;
         }
 
         /* Estilo de la cuenta regresiva */
         #countdown {
-            font-size: 2.5em;
-            color: #e74c3c;
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 1.2em; /* Tamaño igual al de .main-text */
+            color: #000; /* Color negro */
             font-weight: bold;
-            margin: 30px 0;
+            margin: 60px 0; /* Aumentar espacio superior e inferior */
+        }
+
+        /* Mensaje de "Cargando..." */
+        .loading-text {
+            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
+            font-size: 1.2em; /* Tamaño igual al de .main-text */
+            color: #2c3e50;
+            margin-top: 20px;
         }
 
         /* Botón de acción */
@@ -94,6 +113,10 @@
     </style>
 </head>
 <body>
+    <!-- Sección de fondo parallax -->
+    <div class="parallax"></div>
+
+    <!-- Contenedor principal con información -->
     <div class="container">
         <!-- Foto de cabecera -->
         <div class="header-image"></div>
@@ -103,18 +126,30 @@
 
         <!-- Nombres y mensaje principal -->
         <h1 class="names">Cristina & Luis</h1>
+
+        <!-- Mensaje personalizado -->
         <p class="main-text">
-            El verdadero amor es un viaje que comienza con un solo paso. Nos sentimos honrados de compartir nuestro paso más importante con ustedes, 
-			quienes han sido testigos y cómplices de nuestra historia. 
-			¡Únanse a nosotros para celebrar el inicio de esta nueva aventura el 2 de marzo de 2025! 
-			Su presencia hará de este día uno aún más especial.
+            Nuestro amor es una celebración, y queremos compartir ese día contigo 🥂
+
+            Estamos emocionados de unir nuestras vidas y queremos que estés allí para compartir nuestra alegría.
+        </p>
+        <p class="date-text">DOMINGO 2 DE MARZO DEL 2025</p>
+        <p class="main-text">
+            Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
+
+            Con todo nuestro amor y gratitud, CyL
         </p>
 
-        <!-- Cuenta regresiva -->
+        <!-- Cuenta regresiva, con más espacio antes y después -->
         <div id="countdown">Cargando...</div>
 
-        
+        <!-- Mensaje de "Cargando..." debajo del contador -->
+        <div class="loading-text">Cargando...</div>
+
     </div>
+
+    <!-- Sección adicional de fondo parallax -->
+    <div class="parallax"></div>
 
     <script>
         // Configuración de la fecha del evento (2 de marzo de 2025 a las 14:00)
