@@ -14,7 +14,7 @@
             width: 100%;
             height: 100%;
             overflow-x: hidden;
-            font-family: 'Tangerine', cursive; /* Aplicar la fuente principal */
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
             background-image: url('img/plantas_fondo.jpg'); /* Fondo con plantas */
             background-size: cover;
             background-attachment: fixed;
@@ -45,34 +45,37 @@
 
         /* Encabezado */
         .header-text {
-            font-size: 2.5em;
-            margin: 20px 0;
-            color: #2c3e50;
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 2.5em; /* Mismo tamaño que la fecha */
+            color: #000; /* Mismo color que la fecha */
+            margin: 30px 0;
+            font-weight: bold;
         }
 
-        /* Nombres (más grandes) */
+        /* Nombres (más grandes que la fecha) */
         .names {
-            font-size: 5em; /* Aumentar el tamaño de la fuente */
-            margin: 30px 0;
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 4em; /* Más grande que la fecha */
             color: #34495e;
+            margin: 30px 0;
             font-weight: bold;
         }
 
         /* Mensaje principal */
         .main-text {
-            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1em; /* Reducir el tamaño de la fuente */
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 1.2em; /* Tamaño igual al de la frase "Con todo nuestro amor y gratitud" */
             line-height: 1.5;
             color: #2c3e50;
             white-space: pre-wrap; /* Mantener saltos de línea */
-            text-align: justify; /* Justificar el texto */
-            margin: 0 auto; /* Eliminar cualquier sangría o margen adicional */
+            text-align: left; /* Alineado a la izquierda */
+            margin: 0 auto;
         }
 
         /* Estilo de la fecha */
         .date-text {
             font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 2.5em; /* Aumentar el tamaño de la fuente de la fecha */
+            font-size: 2.5em; /* Tamaño de la fuente de la fecha */
             color: #000; /* Color negro */
             margin: 30px 0;
             font-weight: bold;
@@ -81,25 +84,26 @@
         /* Estilo de la cuenta regresiva */
         #countdown {
             font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 1em; /* Tamaño igual al de .main-text */
+            font-size: 1.2em; /* Tamaño igual al de .main-text */
             color: #000; /* Color negro */
             font-weight: bold;
-            margin: 60px 0; /* Aumentar espacio superior e inferior */
+            margin: 60px 0;
         }
 
         /* Mensaje de "Cargando..." */
         .loading-text {
-            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1em; /* Tamaño igual al de .main-text */
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 1.2em; /* Tamaño igual al de .main-text */
             color: #2c3e50;
             margin-top: 20px;
         }
 
         /* Estilo de la firma */
         .signature {
-            font-family: 'Mate SC', serif;
-            font-size: 1.5em;
+            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-size: 1.2em; /* Tamaño igual al de la frase "Con todo nuestro amor y gratitud" */
             color: #000;
+            text-align: right; /* Alineado a la derecha */
             margin-top: 30px;
         }
 
@@ -146,11 +150,11 @@ Estamos emocionados de unir nuestras vidas y queremos que estés allí para comp
 Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
         </p>
 
-        <!-- Firma con "CyL" -->
-        <p class="signature">Con todo nuestro amor y gratitud,</p>
-        <p class="signature">CyL</p>
+        <!-- Firma con "C & L" -->
+        <p class="signature">Con todo nuestro amor y gratitud</p>
+        <p class="signature">C & L</p>
 
-        <!-- Cuenta regresiva, con más espacio antes y después -->
+        <!-- Cuenta regresiva -->
         <div id="countdown">Cargando...</div>
 
         <!-- Mensaje de "Cargando..." debajo del contador -->
