@@ -52,10 +52,10 @@
             font-weight: bold;
         }
 
-        /* Nombres (con el tipo de letra original) */
+        /* Nombres (más grandes) */
         .names {
             font-family: 'Tangerine', cursive; /* Mantener la fuente original */
-            font-size: 4em; /* Más grande que la fecha */
+            font-size: 7em; /* Tamaño más grande */
             color: #34495e;
             margin: 30px 0;
             font-weight: bold;
@@ -63,13 +63,25 @@
 
         /* Mensaje principal */
         .main-text {
-            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
             font-size: 1.2em; /* Tamaño igual al de la frase "Con todo nuestro amor y gratitud" */
             line-height: 1.5;
             color: #2c3e50;
             white-space: pre-wrap; /* Mantener saltos de línea */
             text-align: left; /* Alineado a la izquierda */
             margin: 0 auto;
+            text-transform: capitalize; /* Primeras letras de cada frase en mayúsculas */
+        }
+
+        /* Estilo de la frase personalizada */
+        .custom-text {
+            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
+            font-size: 1.2em; /* Tamaño de letra */
+            line-height: 1.5;
+            color: #2c3e50;
+            text-align: right; /* Alineado a la derecha */
+            margin: 20px 0;
+            white-space: pre-wrap; /* Mantener saltos de línea */
         }
 
         /* Estilo de la fecha */
@@ -100,11 +112,12 @@
 
         /* Estilo de la firma */
         .signature {
-            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 1.2em; /* Tamaño igual al de la frase "Con todo nuestro amor y gratitud" */
+            font-family: 'Tangerine', cursive; /* Aplicar la fuente Tangerine igual a "Cristina & Luisfer" */
+            font-size: 3em; /* Tamaño similar al de los nombres */
             color: #000;
             text-align: right; /* Alineado a la derecha */
             margin-top: 30px;
+            white-space: pre-wrap; /* Mantener los saltos de línea */
         }
 
         /* Botón de acción */
@@ -150,8 +163,12 @@ Estamos emocionados de unir nuestras vidas y queremos que estés allí para comp
 Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
         </p>
 
+        <!-- Frase con el estilo independiente -->
+        <p class="custom-text">
+Con todo nuestro amor y gratitud
+        </p>
+
         <!-- Firma con "C & L" -->
-        <p class="signature">Con todo nuestro amor y gratitud</p>
         <p class="signature">C & L</p>
 
         <!-- Cuenta regresiva -->
