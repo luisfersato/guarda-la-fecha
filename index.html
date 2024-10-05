@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date - Cristina & Luisfer</title>
     <!-- Incluir las fuentes desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&family=Mate+SC&family=Georgia&display=swap" rel="stylesheet">
     <style>
         /* Estilo general */
         body, html {
@@ -63,19 +63,18 @@
 
         /* Mensaje principal */
         .main-text {
-            font-family: 'Mate SC', serif; 
-            font-size: 1.2em; /* Tamaño igual al de la frase "Con todo nuestro amor y gratitud" */
+            font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+            font-size: 1.2em; /* Tamaño de letra */
             line-height: 1.5;
             color: #2c3e50;
             white-space: pre-wrap; /* Mantener saltos de línea */
             text-align: left; /* Alineado a la izquierda */
             margin: 0 auto;
-            text-transform: capitalize; /* Primeras letras de cada frase en mayúsculas */
         }
 
         /* Estilo de la frase personalizada */
         .custom-text {
-            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
+            font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
             font-size: 1.2em; /* Tamaño de letra */
             line-height: 1.5;
             color: #2c3e50;
@@ -120,8 +119,38 @@
             white-space: pre-wrap; /* Mantener los saltos de línea */
         }
 
-        /* Botón de acción */
-        .save-date {
+        /* Estilo del formulario */
+        .attendance-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        /* Ajuste del label "Pre-confirmación de asistencia" */
+        .small-text {
+            font-size: 0.4em; /* Tamaño más pequeño */
+        }
+
+        .attendance-form label {
+            font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .attendance-form input[type="text"],
+        .attendance-form select {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Botón del formulario */
+        .attendance-button {
+            display: block; /* Mostrar el botón como bloque */
+            margin: 20px auto; /* Centrar horizontalmente */
             background-color: #3498db;
             color: white;
             border: none;
@@ -129,11 +158,11 @@
             font-size: 1.2em;
             border-radius: 5px;
             cursor: pointer;
-            margin: 20px 0;
+            text-align: center; /* Asegurar alineación centrada */
             transition: background-color 0.3s;
         }
 
-        .save-date:hover {
+        .attendance-button:hover {
             background-color: #2980b9;
         }
     </style>
@@ -147,9 +176,6 @@
         <!-- Foto de cabecera -->
         <div class="header-image"></div>
 
-        <!-- Encabezado de la página -->
-        <div class="header-text">Guarda la fecha...</div>
-
         <!-- Nombres y mensaje principal -->
         <h1 class="names">Cristina & Luisfer</h1>
 
@@ -160,7 +186,7 @@ Estamos emocionados de unir nuestras vidas y queremos que estés allí para comp
         </p>
         <p class="date-text">DOMINGO 2 DE MARZO DEL 2025</p>
         <p class="main-text">
-Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
+Pronto recibirás una invitación con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
         </p>
 
         <!-- Frase con el estilo independiente -->
@@ -175,7 +201,23 @@ Con todo nuestro amor y gratitud
         <div id="countdown">Cargando...</div>
 
         <!-- Mensaje de "Cargando..." debajo del contador -->
-        <div class="loading-text">Cargando...</div>
+        <div class="loading-text">¿Compartirás con nosotros este momento inolvidable?</div>
+
+        <!-- Formulario de asistencia -->
+        <form class="attendance-form" id="attendanceForm">
+            <label for="nombre" class="small-text">Pre-confirmación de asistencia:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+            <label for="asistencia">¿ ?</label>
+            <select id="asistencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+                <option value="Tal vez">Tal vez</option>
+            </select>
+        </form>
+        
+        <!-- Botón del formulario -->
+        <button type="submit" class="attendance-button" id="enviarBtn">Enviar</button>
     </div>
 
     <!-- Sección adicional de fondo parallax -->
@@ -206,6 +248,50 @@ Con todo nuestro amor y gratitud
                 document.getElementById("countdown").innerHTML = "¡Es el gran día!";
             }
         }, 1000);
+
+        // Manejador del formulario para guardar la respuesta en Google Sheets
+        document.getElementById('enviarBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const asistencia = document.getElementById('asistencia').value;
+
+            // Validación simple
+            if (nombre === "" || asistencia === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // URL del Web App publicado de Google Apps Script
+            const url = "https://script.google.com/macros/s/AKfycbxnfFoakSV2xDHFh4xR7IF8i3naiJQfyGGM-PDDkS7MMtO4ntSOuPVGIWroLEjyu3P_Ow/exec";
+
+            // Datos a enviar en el POST
+            const data = {
+                nombre: nombre,
+                asistencia: asistencia
+            };
+
+            // Opciones de la solicitud
+            const options = {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+
+            // Enviar la solicitud
+            fetch(url, options)
+                .then(response => {
+                    alert("¡Gracias por registrar tu asistencia!");
+                    document.getElementById("attendanceForm").reset(); // Limpiar el formulario
+                })
+                .catch(error => {
+                    console.error("Error al enviar la solicitud:", error);
+                    alert("Hubo un error al registrar la asistencia. Inténtalo de nuevo más tarde.");
+                });
+        });
     </script>
 </body>
 </html>
