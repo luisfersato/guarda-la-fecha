@@ -63,6 +63,16 @@
             text-align: left; /* Alineado a la izquierda */
             margin: 0 auto;
         }
+		
+		/* Mensaje principal */
+        .last-text {
+            font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+            font-size: 1.2em; /* Tamaño de letra */
+            line-height: 1.5;
+            color: #2c3e50;
+            text-align: right; /* Alineado a la izquierda */
+            margin: 0 auto;
+        }
 
         /* Estilo de la fecha */
         .date-text {
@@ -120,12 +130,11 @@
 		
 		 /* Estilo de la firma */
         .signature {
-            font-family: 'Tangerine', cursive; /* Aplicar la fuente Tangerine igual a "Cristina & Luisfer" */
+            font-family: 'Tangerine', cursive; 
             font-size: 3em; /* Tamaño similar al de los nombres */
             color: #000;
             text-align: right; /* Alineado a la derecha */
             margin-top: 30px;
-            white-space: pre-wrap; /* Mantener los saltos de línea */
         }
 		
 		/* Mensaje respuesta */
@@ -195,19 +204,17 @@
 
         <!-- Mensaje personalizado -->
         <p class="main-text">
-Nuestro amor es una celebración, y queremos compartir ese día contigo 🥂
+Nuestro amor es una celebración, y queremos compartir ese día contigo.
 Estamos emocionados de unir nuestras vidas y queremos que estés allí para compartir nuestra alegría.
         </p>
         <p class="date-text">DOMINGO 2 DE MARZO DEL 2025</p>
         <p class="main-text">
 Pronto recibirás una invitación con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
         </p>
-
         <!-- Frase con el estilo independiente -->
-        <p class="main-text">
+        <p class="last-text">
 Con todo nuestro amor y gratitud
         </p>
-
         <!-- Firma con "C & L" -->
         <p class="signature">C & L</p>
 
@@ -219,7 +226,6 @@ Con todo nuestro amor y gratitud
 
         <!-- Formulario de asistencia -->
         <form class="attendance-form" id="attendanceForm">
-            <label for="nombre">Pre-confirmación de asistencia:</label>
             <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
             <label for="asistencia">¿Asistirás?</label>
             <select id="asistencia" required>
