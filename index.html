@@ -93,24 +93,50 @@
         /* Estilo del formulario */
         .attendance-form {
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Cambiar dirección a columna */
+            align-items: flex-start; /* Alinear elementos al inicio */
             justify-content: center;
-            margin: 30px 0;
+            margin: 30px auto;
+            max-width: 100%; /* Asegurar que no se desborde */
+			font-size: 1em;
         }
 
         .attendance-form label {
             font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
             font-size: 1.2em;
-            margin-right: 10px;
+            margin: 5px 0; /* Espaciado vertical */
         }
 
         .attendance-form input[type="text"],
         .attendance-form select {
             padding: 10px;
             font-size: 1em;
-            margin-right: 10px;
+            margin: 5px 0; /* Espaciado vertical */
             border: 1px solid #ccc;
             border-radius: 5px;
+            width: 100%; /* Asegurar que ocupe todo el ancho */
+            box-sizing: border-box;
+        }
+		
+		 /* Estilo de la firma */
+        .signature {
+            font-family: 'Tangerine', cursive; /* Aplicar la fuente Tangerine igual a "Cristina & Luisfer" */
+            font-size: 3em; /* Tamaño similar al de los nombres */
+            color: #000;
+            text-align: right; /* Alineado a la derecha */
+            margin-top: 30px;
+            white-space: pre-wrap; /* Mantener los saltos de línea */
+        }
+		
+		/* Mensaje respuesta */
+        .respuesta-text {
+            font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+            font-size: 1em; /* Tamaño de letra */
+            line-height: 1.5;
+            color: #2c3e50;
+            white-space: pre-wrap; /* Mantener saltos de línea */
+            text-align: left; /* Alineado a la izquierda */
+            margin: 0 auto;
         }
 
         /* Botón del formulario */
@@ -126,10 +152,31 @@
             cursor: pointer;
             text-align: center; /* Asegurar alineación centrada */
             transition: background-color 0.3s;
+            width: 100%; /* Asegurar que el botón ocupe todo el ancho */
+            box-sizing: border-box;
         }
 
         .attendance-button:hover {
             background-color: #2980b9;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .attendance-form {
+                flex-direction: column; /* Asegurar que los elementos se apilen en columnas */
+            }
+
+            .attendance-form input[type="text"],
+            .attendance-form select,
+            .attendance-form label {
+                width: 100%; /* Asegurar ancho completo */
+                text-align: left; /* Alinear el texto a la izquierda */
+                box-sizing: border-box; /* Ajustar el contenido dentro del ancho */
+            }
+
+            .attendance-button {
+                width: 100%; /* Asegurar que el botón ocupe todo el ancho */
+            }
         }
     </style>
 </head>
@@ -157,7 +204,7 @@ Pronto recibirás una invitación con todos los detalles, pero por ahora, reserv
         </p>
 
         <!-- Frase con el estilo independiente -->
-        <p class="custom-text">
+        <p class="main-text">
 Con todo nuestro amor y gratitud
         </p>
 
@@ -174,7 +221,7 @@ Con todo nuestro amor y gratitud
         <form class="attendance-form" id="attendanceForm">
             <label for="nombre">Pre-confirmación de asistencia:</label>
             <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
-            <label for="asistencia">¿ ?</label>
+            <label for="asistencia">¿Asistirás?</label>
             <select id="asistencia" required>
                 <option value="">Selecciona una opción</option>
                 <option value="Si">Sí</option>
