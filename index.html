@@ -4,122 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date - Cristina & Luisfer</title>
-    <!-- Incluir las fuentes desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&family=Mate+SC&display=swap" rel="stylesheet">
-    <style>
-        /* Estilo general */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            font-family: 'Tangerine', cursive; /* Aplicar la fuente principal */
-            background-image: url('img/plantas_fondo.jpg'); /* Fondo con plantas */
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* Contenedor principal */
-        .container {
-            background: rgba(255, 255, 255, 0.85);
-            margin: 50px auto;
-            padding: 20px;
-            max-width: 800px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        /* Foto de cabecera */
-        .header-image {
-            width: 100%;
-            height: 400px;
-            background-image: url('img/img3.jpg'); /* Imagen de cabecera */
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px 15px 0 0;
-        }
-
-        /* Encabezado */
-        .header-text {
-            font-size: 2.5em;
-            margin: 20px 0;
-            color: #2c3e50;
-        }
-
-        /* Nombres (más grandes) */
-        .names {
-            font-size: 5em; /* Aumentar el tamaño de la fuente */
-            margin: 30px 0;
-            color: #34495e;
-            font-weight: bold;
-        }
-
-        /* Mensaje principal */
-        .main-text {
-            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1em; /* Reducir el tamaño de la fuente */
-            line-height: 1.5;
-            color: #2c3e50;
-            white-space: pre-wrap; /* Mantener saltos de línea */
-            text-align: justify; /* Justificar el texto */
-            margin: 0 auto; /* Eliminar cualquier sangría o margen adicional */
-        }
-
-        /* Estilo de la fecha */
-        .date-text {
-            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 2.5em; /* Aumentar el tamaño de la fuente de la fecha */
-            color: #000; /* Color negro */
-            margin: 30px 0;
-            font-weight: bold;
-        }
-
-        /* Estilo de la cuenta regresiva */
-        #countdown {
-            font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
-            font-size: 1em; /* Tamaño igual al de .main-text */
-            color: #000; /* Color negro */
-            font-weight: bold;
-            margin: 60px 0; /* Aumentar espacio superior e inferior */
-        }
-
-        /* Mensaje de "Cargando..." */
-        .loading-text {
-            font-family: 'Lexend Giga', sans-serif; /* Aplicar la fuente Lexend Giga */
-            font-size: 1em; /* Tamaño igual al de .main-text */
-            color: #2c3e50;
-            margin-top: 20px;
-        }
-
-        /* Estilo de la firma */
-        .signature {
-            font-family: 'Mate SC', serif;
-            font-size: 1.5em;
-            color: #000;
-            margin-top: 30px;
-        }
-
-        /* Botón de acción */
-        .save-date {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: background-color 0.3s;
-        }
-
-        .save-date:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <!-- Incluir el archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluir FlipClock.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 </head>
 <body>
     <!-- Sección de fondo parallax -->
@@ -130,31 +19,44 @@
         <!-- Foto de cabecera -->
         <div class="header-image"></div>
 
-        <!-- Encabezado de la página -->
-        <div class="header-text">Guarda la fecha...</div>
-
         <!-- Nombres y mensaje principal -->
         <h1 class="names">Cristina & Luisfer</h1>
 
         <!-- Mensaje personalizado -->
         <p class="main-text">
-Nuestro amor es una celebración, y queremos compartir ese día contigo 🥂
-Estamos emocionados de unir nuestras vidas y queremos que estés allí para compartir nuestra alegría.
+            Nuestro amor es una celebración, y queremos compartir ese día contigo. Estamos emocionados de unir nuestras vidas y esperamos que puedas acompañarnos en Quito, durante el feriado de carnaval, para celebrar y compartir nuestra alegría.
         </p>
         <p class="date-text">DOMINGO 2 DE MARZO DEL 2025</p>
         <p class="main-text">
-Pronto recibirás una invitación formal para nuestra boda con todos los detalles, pero por ahora, reserva la fecha y prepárate para celebrar con nosotros.
+            Pronto recibirás una invitación con todos los detalles, pero por ahora reserva la fecha y prepárate para celebrar con nosotros.
         </p>
+        <!-- Frase con el estilo independiente -->
+        <p class="last-text">
+            Con todo nuestro amor y gratitud
+        </p>
+        <!-- Firma con "C & L" -->
+        <p class="signature">C & L</p>
 
-        <!-- Firma con "CyL" -->
-        <p class="signature">Con todo nuestro amor y gratitud,</p>
-        <p class="signature">CyL</p>
-
-        <!-- Cuenta regresiva, con más espacio antes y después -->
+        <!-- Cuenta regresiva -->
         <div id="countdown">Cargando...</div>
 
         <!-- Mensaje de "Cargando..." debajo del contador -->
-        <div class="loading-text">Cargando...</div>
+        <div class="loading-text">¿Compartirás con nosotros este momento inolvidable?</div>
+
+        <!-- Formulario de asistencia -->
+        <form class="attendance-form" id="attendanceForm">
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+            <label for="asistencia">¿Asistirás?</label>
+            <select id="asistencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+                <option value="Tal vez">Tal vez</option>
+            </select>
+        </form>
+        
+        <!-- Botón del formulario -->
+        <button type="submit" class="attendance-button" id="enviarBtn">Enviar</button>
     </div>
 
     <!-- Sección adicional de fondo parallax -->
@@ -185,6 +87,50 @@ Pronto recibirás una invitación formal para nuestra boda con todos los detalle
                 document.getElementById("countdown").innerHTML = "¡Es el gran día!";
             }
         }, 1000);
+
+        // Manejador del formulario para guardar la respuesta en Google Sheets
+        document.getElementById('enviarBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const asistencia = document.getElementById('asistencia').value;
+
+            // Validación simple
+            if (nombre === "" || asistencia === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // URL del Web App publicado de Google Apps Script
+            const url = "https://script.google.com/macros/s/AKfycbxnfFoakSV2xDHFh4xR7IF8i3naiJQfyGGM-PDDkS7MMtO4ntSOuPVGIWroLEjyu3P_Ow/exec";
+
+            // Datos a enviar en el POST
+            const data = {
+                nombre: nombre,
+                asistencia: asistencia
+            };
+
+            // Opciones de la solicitud
+            const options = {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+
+            // Enviar la solicitud
+            fetch(url, options)
+                .then(response => {
+                    alert("¡Gracias por registrar tu asistencia!");
+                    document.getElementById("attendanceForm").reset(); // Limpiar el formulario
+                })
+                .catch(error => {
+                    console.error("Error al enviar la solicitud:", error);
+                    alert("Hubo un error al registrar la asistencia. Inténtalo de nuevo más tarde.");
+                });
+        });
     </script>
 </body>
 </html>

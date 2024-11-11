@@ -1,0 +1,184 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Lexend+Giga&family=Mate+SC&display=swap');
+
+/* Estilo general */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+    background-image: url('img/plantas_fondo.jpg'); /* Fondo con plantas */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Foto de cabecera */
+.header-image {
+    width: 100%;
+    height: 400px;
+    background-image: url('img/img3.jpg'); /* Imagen de cabecera */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Nombres */
+.names {
+    font-family: 'Tangerine', cursive; /* Mantener la fuente original */
+    font-size: 7em; /* Tamaño más grande */
+    color: #34495e;
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+/* Mensaje principal */
+.main-text {
+    font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+    font-size: 1.2em; /* Tamaño de letra */
+    line-height: 1.5;
+    color: #2c3e50;
+    white-space: pre-wrap; /* Mantener saltos de línea */
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0 auto;
+    padding: 0; /* Eliminar padding */
+}
+
+/* Mensaje principal */
+.last-text {
+    font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+    font-size: 1.2em; /* Tamaño de letra */
+    line-height: 1.5;
+    color: #2c3e50;
+    text-align: right; /* Alineado a la izquierda */
+    margin: 0 auto;
+    padding: 0; /* Eliminar padding */
+}
+
+/* Estilo de la fecha */
+.date-text {
+    font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+    font-size: 2.5em; /* Tamaño de la fuente de la fecha */
+    color: #000; /* Color negro */
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+/* Estilo de la cuenta regresiva */
+#countdown {
+    font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+    font-size: 1.2em; /* Tamaño igual al de .main-text */
+    color: #000; /* Color negro */
+    font-weight: bold;
+    margin: 60px 0;
+}
+
+/* Mensaje de "Cargando..." */
+.loading-text {
+    font-family: 'Mate SC', serif; /* Aplicar la fuente Mate SC */
+    font-size: 1.2em; /* Tamaño igual al de .main-text */
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Estilo del formulario */
+.attendance-form {
+    display: flex;
+    flex-direction: column; /* Cambiar dirección a columna */
+    align-items: flex-start; /* Alinear elementos al inicio */
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 100%; /* Asegurar que no se desborde */
+    font-size: 1em;
+}
+
+.attendance-form label {
+    font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+    font-size: 1.2em;
+    margin: 5px 0; /* Espaciado vertical */
+}
+
+.attendance-form input[type="text"],
+.attendance-form select {
+    padding: 10px;
+    font-size: 1em;
+    margin: 5px 0; /* Espaciado vertical */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    box-sizing: border-box;
+}
+
+/* Estilo de la firma */
+.signature {
+    font-family: 'Tangerine', cursive; 
+    font-size: 3em; /* Tamaño similar al de los nombres */
+    color: #000;
+    text-align: right; /* Alineado a la derecha */
+    margin-top: 30px;
+}
+
+/* Mensaje respuesta */
+.respuesta-text {
+    font-family: 'Georgia', serif; /* Aplicar la fuente Georgia */
+    font-size: 1em; /* Tamaño de letra */
+    line-height: 1.5;
+    color: #2c3e50;
+    white-space: pre-wrap; /* Mantener saltos de línea */
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0 auto;
+}
+
+/* Botón del formulario */
+.attendance-button {
+    display: block; /* Mostrar el botón como bloque */
+    margin: 20px auto; /* Centrar horizontalmente */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; /* Asegurar alineación centrada */
+    transition: background-color 0.3s;
+    width: 100%; /* Asegurar que el botón ocupe todo el ancho */
+    box-sizing: border-box;
+}
+
+.attendance-button:hover {
+    background-color: #2980b9;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .attendance-form {
+        flex-direction: column; /* Asegurar que los elementos se apilen en columnas */
+    }
+
+    .attendance-form input[type="text"],
+    .attendance-form select,
+    .attendance-form label {
+        width: 100%; /* Asegurar ancho completo */
+        text-align: left; /* Alinear el texto a la izquierda */
+        box-sizing: border-box; /* Ajustar el contenido dentro del ancho */
+    }
+
+    .attendance-button {
+        width: 100%; /* Asegurar que el botón ocupe todo el ancho */
+    }
+}
