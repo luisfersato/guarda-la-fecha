@@ -123,7 +123,6 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Estilo de la firma */
 .signature {
     font-family: 'Tangerine', cursive; 
     font-size: 3em; /* Tamaño similar al de los nombres */
